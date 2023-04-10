@@ -1,33 +1,46 @@
-# XMPie: Image Search Coding Challenge
+# Getting Started with Create React App
 
-## The Challenge
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-For this challenge, you are required to create a simple image search application with a special feature. This feature requires the search bar to be at the center of the page and once a search query is submitted, the search bar moves to the top of the screen with animations. The final product should look like this.
+## Available Scripts
 
-![alt text](https://scotch-res.cloudinary.com/image/upload/w_700,q_auto:good,f_auto/media/15139/xolCC47SQsmqOhHKnE9T_challenge.mp4)
+In the project directory, you can run:
 
-## Requirments
+### `npm start`
 
-1. Utilize the provided API to fetch images from Pixabay (https://pixabay.com/api/docs/).
-2. Move the search bar to the top of the page once the images are loaded.
-3. Animate the movement of the search bar to the top of the screen.
-4. In search results:
-   1. Each image should contain on the bottom right a favorite icon, clicking on the icon will indicate this image is in favorites.
-   2. In images that where saved as a favorite the icon should indicate in new search results.
-5. Add a "Manage Favorites" button on the right of the "Search" button which will point to a manage favorite images page.
-6. The manage favorite page should allow the user to see the list of saved images and delete them.
-7. Refresh should not delete the saved images.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Technologies
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-Any modern web technology
+### `npm test`
 
-## Deployment
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-You can deploy your app at any place you like (i.e Heroku).
+### `npm run build`
 
-## Bonus
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-These images once fetched are displayed in a collage, however, as a bonus, try to display a single image once clicked, either as a modal, popup or new page, however you like it!
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-Good luck!
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
