@@ -16,34 +16,32 @@ interface ImagesGalleryProps {
 export function ImagesGallery({ images, handleChangeFavourites }: ImagesGalleryProps) {
   const [favourites] = useFavourites();
   return (
-    <Container>
-      <ImageList variant="masonry" cols={3} gap={8}>
-        {images.map((image) => {
-          const isInFavourites = favourites.hasOwnProperty(getImageId(image));
-          return (
-            <ImageListItem key={image.id}>
-              <img key={image.id} src={image.webformatURL} alt={image.tags}></img>
-              <IconButton
-                sx={{
-                  position: 'absolute',
-                  bottom: '0',
-                  left: '0',
-                }}
-                onClick={() => {
-                  const key = getImageId(image);
-                  handleChangeFavourites(key, image);
-                }}
-              >
-                {isInFavourites ? (
-                  <StarBorderIcon htmlColor="gold" />
-                ) : (
-                  <StarIcon htmlColor="gold" />
-                )}
-              </IconButton>
-            </ImageListItem>
-          );
-        })}
-      </ImageList>
-    </Container>
+    <ImageList variant="masonry" cols={3} gap={8}>
+      {images.map((image) => {
+        const isInFavourites = favourites.hasOwnProperty(getImageId(image));
+        return (
+          <ImageListItem key={image.id}>
+            <img key={image.id} src={image.webformatURL} alt={image.tags}></img>
+            <IconButton
+              sx={{
+                position: 'absolute',
+                bottom: '0',
+                left: '0',
+              }}
+              onClick={() => {
+                const key = getImageId(image);
+                handleChangeFavourites(key, image);
+              }}
+            >
+              {!isInFavourites ? (
+                <StarBorderIcon htmlColor="gold" />
+              ) : (
+                <StarIcon htmlColor="gold" />
+              )}
+            </IconButton>
+          </ImageListItem>
+        );
+      })}
+    </ImageList>
   );
 }

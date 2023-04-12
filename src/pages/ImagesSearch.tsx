@@ -14,16 +14,16 @@ function ImagesSearch() {
 
   return (
     <div className="App">
-      <div
-        style={{
-          height: !images.length ? '100vh' : '200px',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          transition: 'height 1s ease-out',
-        }}
-      >
-        <Container>
+      <Container>
+        <div
+          style={{
+            height: !images.length ? '100vh' : '200px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            transition: 'height 1s ease-out',
+          }}
+        >
           <div className="searchContainer">
             <TextField
               label="Search Images"
@@ -38,9 +38,11 @@ function ImagesSearch() {
               </IconButton>
             </Link>
           </div>
-        </Container>
-      </div>
-      {images.length && <ImagesGallery images={images} handleChangeFavourites={changeFavourites} />}
+        </div>
+        {images.length && (
+          <ImagesGallery images={images} handleChangeFavourites={changeFavourites} />
+        )}
+      </Container>
     </div>
   );
 }
