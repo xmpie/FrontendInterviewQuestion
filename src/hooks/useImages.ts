@@ -9,6 +9,9 @@ export function useImages() {
   const timeout = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
+    if (!search.trim()) {
+      return;
+    }
     clearTimeout(timeout.current);
 
     timeout.current = setTimeout(() => {
