@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { FavouritesContextProvider } from './hooks/useFavorites';
 import ImagesSearch from './pages/ImagesSearch';
 import ImagesFavourites from './pages/ImagesFavourites';
-import './App.css';
+import CssBaseline from '@mui/material/CssBaseline';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +23,7 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <React.StrictMode>
+    <CssBaseline />
     <FavouritesContextProvider>
       <RouterProvider router={router} />
     </FavouritesContextProvider>
