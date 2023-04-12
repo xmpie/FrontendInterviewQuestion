@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, createContext, ReactNode, useContext } from 'react';
 import { fetchImages } from '../utils/fetchImages';
 
-function useImagesState() {
+const useImagesState = () => {
   const [search, changeSearch] = useState('');
   const [images, changeImages] = useState<Record<string, any>[]>([]);
 
@@ -28,7 +28,7 @@ function useImagesState() {
     images,
     handleSearch,
   };
-}
+};
 
 interface ImagesProviderContext {
   search: string;

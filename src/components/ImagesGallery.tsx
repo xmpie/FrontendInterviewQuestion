@@ -4,7 +4,6 @@ import ImageListItem from '@mui/material/ImageListItem';
 import IconButton from '@mui/material/IconButton';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import StarIcon from '@mui/icons-material/Star';
-import Container from '@mui/material/Container';
 import { useFavourites } from '../hooks/useFavorites';
 import { getImageId } from '../utils/getImageId';
 
