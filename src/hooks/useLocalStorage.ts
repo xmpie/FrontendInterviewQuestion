@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
 
-type ChangeValue<T> = (value: Set<T>) => void;
+type ChangeValue<T> = (value: T) => void;
 
-export function useSetLocalStorage<T>(key: string, initialValue: Set<T>): [Set<T>, ChangeValue<T>] {
-  const [storedValue, setStoredvalue] = useState<Set<T>>(() => {
+export function useLocalStorage<T>(key: string, initialValue: T): [T, ChangeValue<T>] {
+  const [storedValue, setStoredvalue] = useState<T>(() => {
     const item = window.localStorage.getItem(key);
-    return item ? new Set(JSON.parse(item)) : initialValue;
+    return item ? JSON.parse(item) : initialValue;
   });
   useEffect(() => {
-    window.localStorage.setItem(key, JSON.stringify(Array.from(storedValue)));
+    window.localStorage.setItem(key, JSON.stringify(storedValue));
   }, [key, storedValue]);
 
-  const changeValue = (value: Set<T>) => {
+  const changeValue = (value: T) => {
     setStoredvalue(value);
   };
 
