@@ -1,14 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { FavouritesContextProvider } from './hooks/useFavorites';
+import ImagesSearch from './pages/ImagesSearch';
+import ImagesFavourites from './pages/ImagesFavourites';
+import './App.css';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <ImagesSearch />,
+  },
+  {
+    path: '/favourites',
+    element: <ImagesFavourites />,
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
   <React.StrictMode>
-    <App />
+    <FavouritesContextProvider>
+      <RouterProvider router={router} />
+    </FavouritesContextProvider>
   </React.StrictMode>
 );
 
